@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 	<TextView
-		android:text="Hello World"
+		android:text="Super Calculator"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
@@ -13,8 +13,20 @@
 		android:id="@+id/textView1"
 		android:textSize="30dp"
 		android:gravity="center" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText1"
+		
+		
+		 />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText2"
+		 />
 	<Button
-		android:text="Press me"
+		android:text="Calculate"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/button1"
