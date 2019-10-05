@@ -13,7 +13,15 @@ namespace App1
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.first_layout1);
+
+            var textview = FindViewById<TextView>(Resource.Id.textView1);
+            var button = FindViewById<Button>(Resource.Id.button1);
+
+            button.Click += delegate
+            {
+                textview.Text = "It works";
+            };
         }
     }
 }
