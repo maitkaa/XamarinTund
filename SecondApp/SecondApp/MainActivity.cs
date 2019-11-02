@@ -17,6 +17,7 @@ namespace SecondApp
             SetContentView(Resource.Layout.activity_main);
 
             var toSecondActivityButton = FindViewById<Button>(Resource.Id.button1);
+            var toWebviewActivityButton = FindViewById<Button>(Resource.Id.button2);
             var editText = FindViewById<EditText>(Resource.Id.editText1);
 
 
@@ -28,6 +29,11 @@ namespace SecondApp
                 intent.PutExtra("edittextvalue", text);
                 StartActivity(intent);
             
+            };
+            toWebviewActivityButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(SecondActivity));
+                StartActivity(intent);
             };
 
         }
