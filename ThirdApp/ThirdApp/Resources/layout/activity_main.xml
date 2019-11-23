@@ -1,0 +1,53 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:text="Battery Status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/button1" />
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="66.0dp"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="25dp" 
+       />
+    <TextView
+        android:text="Flashlight"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/textView2"
+        android:textStyle="bold" />
+
+    <ToggleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toggleButton1" />
+    <ImageView
+        android:src="@drawable/pic"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitStart"
+        android:gravity="center"
+        android:id="@+id/imageView1" />
+    
+    <Button
+        android:text="Press ME !"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/button2" />
+</LinearLayout>
