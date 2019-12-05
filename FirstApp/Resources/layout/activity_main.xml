@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
@@ -13,23 +13,32 @@
 		android:id="@+id/textView1"
 		android:textSize="30dp"
 		android:gravity="center" />
-	<EditText
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/editText1"
-		
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:inputType="numberDecimal" 
 		
 		 />
-	<EditText
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/editText2"
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+		android:inputType="numberDecimal" 
 		 />
 	<Button
 		android:text="Calculate"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/button1"
+		android:gravity="center"
+		android:ellipsize="middle"
+		/>
+<Button
+		android:text="Clear"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/button2"
 		android:gravity="center"
 		android:ellipsize="middle"
 		/>
