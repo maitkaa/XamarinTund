@@ -24,21 +24,57 @@ namespace FirstApp
             var textview = FindViewById<TextView>(Resource.Id.textView1);
             //Userinput 1 and 2 In EditText XML must be android:inputType="numberDecimal" 
             var textfield1 = FindViewById<EditText>(Resource.Id.editText1);
-            var textfield2 = FindViewById<EditText>(Resource.Id.editText2);
+           var textfield2 = FindViewById<EditText>(Resource.Id.editText2);
             //Calculate and Clear buttons
             var button = FindViewById<Button>(Resource.Id.button1);
             var button2 = FindViewById<Button>(Resource.Id.button2);
+            var addBtn = FindViewById<Button>(Resource.Id.button3);
+            var divideBtn = FindViewById<Button>(Resource.Id.button4);
+            var subtractBtn = FindViewById<Button>(Resource.Id.button5);
+            var multiplyBtn = FindViewById<Button>(Resource.Id.button6);
+             var action = 0;
 
-                button.Click += delegate
+            addBtn.Click += delegate
+            {
+                action += 1;
+            };
+            divideBtn.Click += delegate
+            {
+                action += 2;
+            };
+            multiplyBtn.Click += delegate
+            {
+                action += 3;
+            };
+            subtractBtn.Click += delegate
+            {
+                action += 4;
+            };
+
+            button.Click += delegate
                 {
                     var inputtext = textfield1.Text.ToString();
 
                     var inputtext2 = textfield2.Text.ToString();
 
-                    result = Convert.ToDouble(inputtext) + Convert.ToDouble(inputtext2);
-
+                    switch (action)
+                    {
+                        case 1:
+                            result = Convert.ToDouble(inputtext) + Convert.ToDouble(inputtext2);
+                            break;
+                        case 2:
+                            result = Convert.ToDouble(inputtext) - Convert.ToDouble(inputtext2);
+                            break;
+                        case 3:
+                            result = Convert.ToDouble(inputtext) * Convert.ToDouble(inputtext2);
+                            break;
+                        case 4:
+                            result = Convert.ToDouble(inputtext) / Convert.ToDouble(inputtext2);
+                            break;
+                    }
+                
                     textview.Text = "Result is " + result.ToString();
-
+                    
                 };
             
            // Clear textfields and restore Textview original value
@@ -46,7 +82,8 @@ namespace FirstApp
             {
                 textfield1.Text = "";
                 textfield2.Text = "";
-                textview.Text = "Super Calculator";
+                textview.Text = "Calculator";
+                action = 0;
 
             };
         }
