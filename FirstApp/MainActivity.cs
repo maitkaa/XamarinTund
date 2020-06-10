@@ -36,7 +36,7 @@ namespace FirstApp
 
             addBtn.Click += delegate
             {
-                action += 1;
+                action += 1; 
             };
             divideBtn.Click += delegate
             {
