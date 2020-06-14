@@ -4,6 +4,8 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using System;
+using Xamarin.Essentials;
+using Android.Graphics;
 
 namespace FirstApp
 {
@@ -32,23 +34,28 @@ namespace FirstApp
             var divideBtn = FindViewById<Button>(Resource.Id.button4);
             var subtractBtn = FindViewById<Button>(Resource.Id.button5);
             var multiplyBtn = FindViewById<Button>(Resource.Id.button6);
-             var action = 0;
+            var action = 0;
+            
 
             addBtn.Click += delegate
             {
-                action += 1; 
+                action += 1;
+                addBtn.SetBackgroundColor(Color.Red);
             };
             divideBtn.Click += delegate
             {
                 action += 2;
+                divideBtn.SetBackgroundColor(Color.Red);
             };
             multiplyBtn.Click += delegate
             {
                 action += 3;
+                multiplyBtn.SetBackgroundColor(Color.Red);
             };
             subtractBtn.Click += delegate
             {
                 action += 4;
+                subtractBtn.SetBackgroundColor(Color.Red); 
             };
 
             button.Click += delegate
@@ -56,6 +63,15 @@ namespace FirstApp
                     var inputtext = textfield1.Text.ToString();
 
                     var inputtext2 = textfield2.Text.ToString();
+
+                    if (string.IsNullOrEmpty(inputtext))
+                    {
+                        inputtext = "0";
+                    }
+                    if (string.IsNullOrEmpty(inputtext2))
+                    {
+                        inputtext2 = "0";
+                    }
 
                     switch (action)
                     {
@@ -83,6 +99,22 @@ namespace FirstApp
                 textfield1.Text = "";
                 textfield2.Text = "";
                 textview.Text = "Calculator";
+                switch (action)
+                {
+                    case 1:
+                        addBtn.SetBackgroundColor(Color.LightGray);
+                        break;
+                    case 2:
+                        divideBtn.SetBackgroundColor(Color.LightGray);
+                        break;
+                    case 3:
+                        multiplyBtn.SetBackgroundColor(Color.LightGray);
+                        break;
+                    case 4:
+                        subtractBtn.SetBackgroundColor(Color.LightGray);
+                        break;
+                }
+               
                 action = 0;
 
             };
@@ -94,6 +126,6 @@ namespace FirstApp
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-      
+        
     }
 }
